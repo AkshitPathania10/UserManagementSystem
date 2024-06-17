@@ -34,11 +34,11 @@ services:
     container_name: server
     hostname: server
     environment:
-      MONGO_URI: mongodb+srv://nishant007-tech:nishanti69@user-management-cluster.wdaztck.mongodb.net/user_management?retryWrites=true&w=majority&appName=user-management-cluster
+      MONGO_URI: mongodb+srv://username:pass@user-management-cluster.url/user_management?retryWrites=true&w=majority&appName=user-management-cluster
       REDIS_URL: redis://redis-server:6379
       RMQ_URL: amqp://rabbitmq:5672
       SECRET_JWT: NishantSecretKey
-      MA_KEY: 49uriefv7l0i1obekollxhpu
+      MA_KEY: somekey
     ports:
       - '5001:5001'
     depends_on:
