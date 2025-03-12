@@ -89,19 +89,19 @@ const searchUsers = async (req, res) => {
             query.name = { $regex: name, $options: "i" };
         }
         let key = `User-${page}-` + JSON.stringify(query);
-        let dataFromRedis = await client.get(key);
-        console.log("dataFromRedis",dataFromRedis);
-        if (dataFromRedis) {
-            return res.json(JSON.parse(dataFromRedis));
-        } else {
+        // let dataFromRedis = await client.get(key);
+        // console.log("dataFromRedis",dataFromRedis);
+        // if (dataFromRedis) {
+        //     return res.json(JSON.parse(dataFromRedis));
+        // } else {
             console.log("query",query);
             console.log("limit",limit);
             console.log("skipIndex",skipIndex);
             let results = await fetchQueryResults(query, limit, skipIndex);
-            client.setEx(key, 3600, JSON.stringify({ results: results, count: results.length }));
+            // client.setEx(key, 3600, JSON.stringify({ results: results, count: results.length }));
             console.log("results",results);
             res.json({ results: results, count: results.length  });
-        }
+        // }
     } catch (error) {
         res.status(400).send(error);
     }
