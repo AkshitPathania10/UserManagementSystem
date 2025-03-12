@@ -62,4 +62,4 @@ nodemon or node index.js
 
    ```
 
-4. Decrypted password is "nishant"
+4. Decrypted password is "akshit"
