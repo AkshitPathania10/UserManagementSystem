@@ -21,7 +21,8 @@ It's User Management System.
 Open your terminal and follow the commands:
 
 ```bash
-git clone git@github.com:nishant-sendinblue/User-Management.git
+git clone https://github.com/AkshitPathania10/UserManagementSystem.git
+
 
 cd frontend
 npm install
